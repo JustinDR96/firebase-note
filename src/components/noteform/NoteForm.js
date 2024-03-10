@@ -10,7 +10,14 @@ const NoteForm = () => {
   const [color, setColor] = useState("#ffffff");
   const [isUrgent, setIsUrgent] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
+  const colors = [
+    "#ff0000",
+    "#00ff00",
+    "#0000ff",
+    "#ffff00",
+    "#00ffff",
+    "#ff00ff",
+  ];
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title || !message) return;
@@ -39,7 +46,7 @@ const NoteForm = () => {
   };
 
   return (
-    <div className="noteform">
+    <div className="note-form">
       <button
         onClick={() => setIsOpen(true)}
         className="add-modal
@@ -55,45 +62,66 @@ const NoteForm = () => {
         </svg>
       </button>
 
-      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-        <h2>Ajouter une note</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Titre :</label>
-            <input
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Message :</label>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Couleur :</label>
-            <input
-              type="color"
-              value={color}
-              onChange={(e) => setColor(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+        className={"Modal-container"}
+      >
+        <div className="container">
+          <button onClick={() => setIsOpen(false)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+              fill="red"
+            >
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+          </button>
+          <h2>Add note</h2>
+          <form onSubmit={handleSubmit} className="form-note">
+            <div>
+              <label>Titre :</label>
               <input
-                type="checkbox"
-                checked={isUrgent}
-                onChange={(e) => setIsUrgent(e.target.checked)}
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
               />
-              Urgent
-            </label>
-          </div>
-          <button type="submit">Ajouter la note</button>
-        </form>
-        <button onClick={() => setIsOpen(false)}>Fermer</button>
+            </div>
+            <div>
+              <label>Message :</label>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </div>
+            <div>
+              <label>Couleur :</label>
+              {colors.map((colorOption, index) => (
+                <label key={index} style={{ backgroundColor: colorOption }}>
+                  <input
+                    type="radio"
+                    value={colorOption}
+                    checked={colorOption === color}
+                    onChange={(e) => setColor(e.target.value)}
+                  />
+                </label>
+              ))}
+            </div>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={isUrgent}
+                  onChange={(e) => setIsUrgent(e.target.checked)}
+                />
+                Priority
+              </label>
+            </div>
+            <button type="submit">Ajouter la note</button>
+          </form>
+        </div>
       </Modal>
     </div>
   );
