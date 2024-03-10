@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.App {
+  display: flex;
+  position: relative;
+}
+
+.navbar-mobile {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-mobile.closed {
+  transform: translateX(-100%);
+}
+
+.nav-icon-button {
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+
+.nav-icon-button.clicked {
+  left: 20px;
+}

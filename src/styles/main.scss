@@ -1,0 +1,18 @@
+// Importer les styles de base
+@import "./base/reset";
+
+// Importer les variables et les mixins
+@import "./helpers/mixins";
+@import "./helpers/variables";
+
+// Importer les styles des composants
+@import "../components/navbar/navbar.scss";
+@import "../components/noteform/NoteForm.scss";
+@import "../components/notelist/NoteList.scss";
+@import "../components/SignIn/SignIn.scss";
+// Importer les styles spécifiques aux pages
+
+@import "../pages/dashboard/dashboard.scss";
+
+// Importer les styles globaux
+@import "./App";

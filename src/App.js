@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import { Navbar } from "./components";
 
 function App() {
+  const [isNavOpen, setIsNavOpen] = useState(true);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <button
+        className={`nav-icon-button ${isButtonClicked ? "clicked" : ""}`}
+        onClick={() => {
+          setIsNavOpen(!isNavOpen);
+          setIsButtonClicked(!isButtonClicked);
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 -960 960 960"
+          width="24"
         >
-          Learn React
-        </a>
-      </header>
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </button>
+      {isNavOpen && <Navbar />}
+      <Dashboard />
     </div>
   );
 }
