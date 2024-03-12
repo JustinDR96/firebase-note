@@ -7,15 +7,18 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <img src="/images/logo/logo.png" alt="" className="nav-logo" />
+      <a href="/dashboard">
+        <img src="/images/logo/logo.png" alt="" className="nav-logo" />
+      </a>
+
       <SignIn />
       <div className="nav-links">
-        <a
-          href="#"
+        <button
           onClick={(e) => {
             e.preventDefault();
             setIsOpen(!isOpen);
           }}
+          className="link-button"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,13 +29,24 @@ function Navbar() {
             <path d="M440-240h80v-120h120v-80H520v-120h-80v120H320v80h120v120ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z" />
           </svg>
           <span>Add New</span>
-        </a>
+        </button>
         {isOpen && (
           <div className="dropdown">
             <NoteForm />
           </div>
         )}
-        <a href="#">
+        <a href="/dashboard">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520ZM200-600h160v-160H200v160Zm400 0h160v-160H600v160Zm0 400h160v-160H600v160Zm-400 0h160v-160H200v160Zm400-400Zm0 240Zm-240 0Zm0-240Z" />
+          </svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="/archive">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24"
@@ -43,7 +57,7 @@ function Navbar() {
           </svg>
           <span>Archive</span>
         </a>
-        <a href="#">
+        <a href="/trash">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24"

@@ -22,7 +22,30 @@
       height: 50px;
       margin-left: 1rem;
     }
+    button {
+      border: none;
+      background: none;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      span {
+        margin-left: 10px;
+        margin-top: 3px;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
     a {
+      &:nth-child(4) {
+        text-decoration: line-through;
+      }
       text-decoration: none;
       color: #333;
       font-weight: bold;

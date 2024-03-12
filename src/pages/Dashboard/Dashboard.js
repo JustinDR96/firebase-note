@@ -6,7 +6,18 @@ function Dashboard() {
     <div className="dashboard">
       <NoteForm />
       <h1>My Notes</h1>
-      <NoteList />
+
+      <NoteList
+        deleteStatus={false}
+        archiveStatus={false}
+        priorityStatus={true}
+      />
+      <hr />
+      <NoteList
+        deleteStatus={false}
+        archiveStatus={false}
+        priorityStatus={false}
+      />
     </div>
   );
 }

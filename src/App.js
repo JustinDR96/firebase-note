@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Trash from "./pages/Trash/Trash";
+import Archive from "./pages/Archive/Archive";
 import { Navbar } from "./components";
 
 function App() {
@@ -25,7 +28,14 @@ function App() {
         </svg>
       </button>
       {isNavOpen && <Navbar />}
-      <Dashboard />
+      <Router>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/trash" element={<Trash />} />
+          <Route path="/archive" element={<Archive />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

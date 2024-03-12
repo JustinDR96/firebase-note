@@ -30,6 +30,8 @@ const NoteForm = () => {
         isUrgent,
         createdAt: new Date().toISOString(),
         userId: auth.currentUser.uid, // Ajoute l'ID de l'utilisateur à la note
+        archive: false,
+        delete: false,
       };
 
       // Ajouter la note à Firestore
