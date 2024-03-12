@@ -11,12 +11,12 @@ const NoteForm = () => {
   const [isUrgent, setIsUrgent] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const colors = [
-    "#ff0000",
-    "#00ff00",
-    "#0000ff",
-    "#ffff00",
-    "#00ffff",
-    "#ff00ff",
+    "#ff4c4c",
+    "#4cff4c",
+    "#4c4cff",
+    "#ffff4c",
+    "#4cffff",
+    "#ff4cff",
   ];
   const handleSubmit = async (e) => {
     e.preventDefault();
