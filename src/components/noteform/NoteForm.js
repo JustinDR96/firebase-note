@@ -84,22 +84,23 @@ const NoteForm = () => {
           <h2>Add note</h2>
           <form onSubmit={handleSubmit} className="form-note">
             <div>
-              <label>Titre :</label>
               <input
+                className="title"
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                placeholder="title"
               />
             </div>
             <div>
-              <label>Message :</label>
               <textarea
+                className="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                placeholder="type your note here..."
               />
             </div>
-            <div>
-              <label>Couleur :</label>
+            <div className="color">
               {colors.map((colorOption, index) => (
                 <label key={index} style={{ backgroundColor: colorOption }}>
                   <input
@@ -111,15 +112,14 @@ const NoteForm = () => {
                 </label>
               ))}
             </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={isUrgent}
-                  onChange={(e) => setIsUrgent(e.target.checked)}
-                />
-                Priority
-              </label>
+            <div className="urgent">
+              <input
+                type="checkbox"
+                checked={isUrgent}
+                onChange={(e) => setIsUrgent(e.target.checked)}
+                className="priority"
+              />
+              <p>Urgent</p>
             </div>
             <button type="submit">ADD</button>
           </form>
