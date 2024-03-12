@@ -121,7 +121,7 @@ const NoteForm = () => {
                 Priority
               </label>
             </div>
-            <button type="submit">Ajouter la note</button>
+            <button type="submit">ADD</button>
           </form>
         </div>
       </Modal>

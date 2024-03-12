@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <a href="/dashboard">
-        <img src="/images/logo/logo.png" alt="" className="nav-logo" />
+        <img src="/images/logo/logo-3.png" alt="" className="nav-logo" />
       </a>
 
       <SignIn />
