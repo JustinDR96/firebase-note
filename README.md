@@ -15,12 +15,12 @@ A simple and intuitive note-taking application, with features for sorting and ma
 - SCSS
 - React Router Dom
 
-## Local Installation
+<!-- ## Local Installation
 
 1. Clone this repository: `git clone repository_link`
 2. Navigate to the project directory: `cd project_name`
 3. Install dependencies: `npm install`
-4. Run the development server: `npm run dev`
+4. Run the development server: `npm start` -->
 
 ## Copyright
 
